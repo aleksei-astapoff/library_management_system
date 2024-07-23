@@ -2,7 +2,7 @@ from constants import DICT_SEARCH_FIELD, DICT_STATUS_BOOK
 from utilities import load_data, check_data, save_data, representation_book
 
 
-def start_menu(first_start) -> tuple[str, bool]:
+def start_menu(first_start) -> str:
     """Выводит приветственное сообщение."""
 
     welocme_text = '''
@@ -83,8 +83,8 @@ def search_book(query, field) -> list:
     search_book: list = '\n'.join(
         representation_book(book_id, book) for book_id, book in books.items()
         )
-    print(f'\n Найдено книг: {len(books)}.')
-    return search_book
+    
+    return search_book, len(books)
 
 
 def list_books() -> str:
@@ -153,7 +153,9 @@ def main() -> None:
                  '\n Ввод: '
                     ).strip().lower()
                 query = input('Введите критерий поиска: ').strip()
-                print(search_book(query, field))
+                messege, count_book = search_book(query, field)
+                print(f'\n Найдено книг: {count_book}.')
+                print(messege)
                 print('Поиск завершен.')
             elif user_сhoice == '4':
                 print(list_books())
@@ -172,6 +174,8 @@ def main() -> None:
             print(f'\n При работе программы возникло исключение: {error}')
         finally:
             first_start = False
+
+    return first_start
 
 
 if __name__ == "__main__":
