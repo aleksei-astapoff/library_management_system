@@ -24,7 +24,7 @@ source env/bin/activate
 Команда для установки и активации виртуального окружения на Windows:
 ```
 python -m venv venv
-venv\Scriptsctivate
+source venv/Scripts/activate
 ```
 
 3. #### Установите зависимости:
