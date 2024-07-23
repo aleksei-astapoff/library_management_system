@@ -83,7 +83,7 @@ def search_book(query, field) -> list:
     search_book: list = '\n'.join(
         representation_book(book_id, book) for book_id, book in books.items()
         )
-    
+
     return search_book, len(books)
 
 
@@ -167,7 +167,7 @@ def main() -> None:
                     ).strip()
                 print(change_book_status(book_id, status))
             elif user_сhoice == '6':
-                print('\n Программа завершена. Спасибо что в6ыбрали нас!')
+                print('\n Программа завершена. Спасибо что выбрали нас!')
                 break
 
         except Exception as error:

@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import utilities
 from library_management_system import (generate_id, add_book, delete_book,
-                                       search_book, list_books, 
+                                       search_book, list_books,
                                        change_book_status, start_menu, main)
 from utilities import (load_data, save_data, check_data, representation_book)
 
